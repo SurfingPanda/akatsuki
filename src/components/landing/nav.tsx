@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MenuIcon } from "lucide-react";
+import { LogIn, MenuIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -46,7 +46,16 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <Button
+            render={<Link href="/login" />}
+            nativeButton={false}
+            variant="ghost"
+            size="icon"
+            aria-label="Sign in"
+          >
+            <LogIn className="size-4" />
+          </Button>
           <Button
             render={<a href="#join" />}
             nativeButton={false}
@@ -86,6 +95,12 @@ export function Nav() {
                 className="mt-2 rounded-md bg-primary px-2 py-3 text-center text-sm font-medium text-primary-foreground"
               >
                 Join the Guild
+              </SheetClose>
+              <SheetClose
+                render={<Link href="/login" />}
+                className="rounded-md px-2 py-3 text-center text-sm font-medium text-muted-foreground hover:bg-muted"
+              >
+                Sign In
               </SheetClose>
             </nav>
           </SheetContent>
